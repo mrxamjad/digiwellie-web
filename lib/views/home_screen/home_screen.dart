@@ -17,10 +17,10 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final List<Widget> _sectionList = const [
-    // NavBarSection(),
-    // MainHighlightSection(),
-    // ServicesOfferSection(),
-    // ClientDescSection(),
+    NavBarSection(),
+    MainHighlightSection(),
+    ServicesOfferSection(),
+    ClientDescSection(),
     ClientListSection(),
     ReviewSection(),
     Expanded(
