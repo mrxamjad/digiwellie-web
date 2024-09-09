@@ -11,6 +11,7 @@ class Clr {
 
   static const Color blue3D63EA = Color(0xff3D63EA);
   static const Color black1A202C = Color(0xff1A202C);
+  static const Color black1718096 = Color(0xff718096);
 
   static const Color pinkE7DAED = Color(0xffE7DAED);
   static const Color pinkF76680 = Color(0xffF76680);

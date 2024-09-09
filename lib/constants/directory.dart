@@ -15,4 +15,11 @@ class Dir {
   static const String techMateCompanyLogo =
       "assets/icons/tech_mate_company.png";
   static const String clickOredrCompanyLogo = "assets/icons/click_order.png";
+
+  //Review Images
+  static const String review1 = "assets/images/review1.png";
+  static const String review2 = "assets/images/review2.png";
+  static const String review3 = "assets/images/review3.png";
+  static const String review4 = "assets/images/review4.png";
+  static const String review5 = "assets/images/review5.png";
 }

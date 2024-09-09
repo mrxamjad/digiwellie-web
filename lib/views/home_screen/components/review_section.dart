@@ -13,7 +13,7 @@ class ReviewSection extends StatelessWidget {
           height: 50,
         ),
         const GradianBox(height: 5, width: 70),
-        _headWidget()
+        _headWidget(context)
       ],
     );
   }
@@ -35,25 +35,60 @@ class ReviewSection extends StatelessWidget {
     );
   }
 
-  Widget _headWidget() {
-    return const Column(
+  Widget _headWidget(BuildContext context) {
+    List<String> reviewImages = [
+      "assets/images/review1.png",
+      "assets/images/review2.png",
+      "assets/images/review3.png",
+      "assets/images/review4.png",
+      "assets/images/review5.png",
+    ];
+
+    return Column(
       children: [
-        SizedBox(
+        const SizedBox(
           height: 50,
         ),
-        Text(
+        const Text(
           "Meet the People \n",
           style: TextStyle(
             fontSize: 35,
           ),
         ),
-        Text(
+        const Text(
           "We are Working With",
           style: TextStyle(
               color: Clr.black1A202C,
               fontWeight: FontWeight.bold,
               fontSize: 35),
         ),
+        const SizedBox(
+          height: 50,
+        ),
+        const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 300),
+          child: Text(
+            "Without any doubt I recommend Alcaline Solutions as one of the best web design and digital marketing agencies. One of the best agencies I’ve came across so far. Wouldn’t be hesitated to introduce their work to someone else.",
+            textAlign: TextAlign.center,
+            style: TextStyle(
+                color: Clr.black1718096,
+                fontWeight: FontWeight.normal,
+                fontSize: 18),
+          ),
+        ),
+        SizedBox(
+          width: MediaQuery.of(context).size.width,
+          height: 200,
+          child: ListView.builder(
+              itemCount: 10,
+              itemBuilder: (context, index) {
+                return Container(
+                    height: 200,
+                    width: 200,
+                    color: Colors.red,
+                    child: Image.asset(reviewImages[index]));
+              }),
+        )
       ],
     );
   }
