@@ -22,4 +22,20 @@ class Dir {
   static const String review3 = "assets/images/review3.png";
   static const String review4 = "assets/images/review4.png";
   static const String review5 = "assets/images/review5.png";
+
+  //Case Study App
+  static const String case1 = "assets/images/Case-study__image-2.png";
+  static const String case2 = "assets/images/Case-study__image-3.png";
+  static const String case3 = "assets/images/Case-study__image.png";
+
+  //Profile round
+  static const String profile1 = "assets/images/Ellipse 185-2.png";
+  static const String profile2 = "assets/images/Ellipse 185-3.png";
+  static const String profile3 = "assets/images/Ellipse 185.png";
+
+  //Scal board groupe
+
+  static const String scalBoard = "assets/images/Rectangle 17.png";
+  static const String scalBoard2 = "assets/images/Rectangle 18.png";
+  static const String scalBoard3 = "assets/images/Rectangle 19.png";
 }
