@@ -2,6 +2,7 @@ import 'package:dw_web/views/home_screen/components/client_list_section.dart';
 import 'package:dw_web/views/home_screen/components/development_approach_section.dart';
 import 'package:dw_web/views/home_screen/components/header_section.dart';
 import 'package:dw_web/views/home_screen/components/review_section.dart';
+import 'package:dw_web/views/home_screen/components/tech_stack_section.dart';
 import 'package:dw_web/views/home_screen/components/way_of_building_widget.dart';
 
 import 'package:flutter/material.dart';
@@ -29,6 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
     CaseStudySection(),
     WayOfBuildingSection(),
     DevelopmentApproachSection(),
+    TechStackSection(),
     Expanded(
       child: SelectableText("This last"),
     )

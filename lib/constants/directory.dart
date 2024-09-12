@@ -38,4 +38,16 @@ class Dir {
   static const String scalBoard = "assets/images/Rectangle 17.png";
   static const String scalBoard2 = "assets/images/Rectangle 18.png";
   static const String scalBoard3 = "assets/images/Rectangle 19.png";
+
+  //Progmming language
+  static const String ruby = "assets/images/RubyOnRails.png";
+  static const String python = "assets/images/Python.png";
+  static const String php = "assets/images/PHP.png";
+  static const String nodejs = "assets/images/NodeJS.png";
+  static const String netCore = "assets/images/NETCore.png";
+  static const String mongoo = "assets/images/mon 1.png";
+  static const String java = "assets/images/Java.png";
+  static const String go = "assets/images/Go.pngg";
+  static const String mysql =
+      "assets/images/kisspng-mysqli-php-database-linux-coding-5ac4824a2e87e0 1.png";
 }
