@@ -50,4 +50,20 @@ class Dir {
   static const String go = "assets/images/Go.pngg";
   static const String mysql =
       "assets/images/kisspng-mysqli-php-database-linux-coding-5ac4824a2e87e0 1.png";
+
+  //Feature resourese
+  static const String resourse1 = "assets/images/Rectangle 10-2.png";
+  static const String resourse2 = "assets/images/Rectangle 10-3.png";
+  static const String resourse3 = "assets/images/Rectangle 10-4.png";
+  static const String resourse4 = "assets/images/Rectangle 10-5.png";
+  static const String resourse5 = "assets/images/Rectangle 10.png";
+
+  //Social Logo
+  static const String facebook = "assets/images/Group 5.png";
+  static const String linkenin = "assets/images/Group 9.png";
+  static const String instagram = "assets/images/Group 11.png";
+  static const String twitter = "assets/images/Group 10.png";
+  static const String google = "assets/images/google-page-speed 1.png";
+  static const String company =
+      "assets/images/Web Design _ Website Design _ Software House Website _ Software Company Website (Community).zip";
 }
