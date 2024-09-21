@@ -1,6 +1,7 @@
 import 'package:dw_web/components/gradiant_box.dart';
 import 'package:dw_web/constants/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class ReviewSection extends StatelessWidget {
   const ReviewSection({super.key});
@@ -77,17 +78,61 @@ class ReviewSection extends StatelessWidget {
           ),
         ),
         SizedBox(
+          height: 100,
+        ),
+        SizedBox(
+          height: 250,
           width: MediaQuery.of(context).size.width,
-          height: 200,
-          child: ListView.builder(
-              itemCount: 10,
-              itemBuilder: (context, index) {
-                return Container(
-                    height: 200,
-                    width: 200,
-                    color: Colors.red,
-                    child: Image.asset(reviewImages[index]));
-              }),
+          child: Row(
+            children: [
+              const Spacer(),
+              Expanded(
+                flex: 4,
+                child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: reviewImages.length,
+                    itemBuilder: (context, index) {
+                      return SizedBox(
+                        width: 180,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            CircleAvatar(
+                                radius: 40,
+                                backgroundImage:
+                                    AssetImage(reviewImages[index])),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [1, 2, 3, 4, 5]
+                                    .map((e) => const Icon(
+                                          Icons.star,
+                                          color: Colors.amberAccent,
+                                        ))
+                                    .toList()),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            const Text(
+                              "Amjad Ali",
+                              style: TextStyle(
+                                  fontSize: 14, color: Clr.black1718096),
+                            ),
+                            const Text(
+                              "SoftWare Developer",
+                              style: TextStyle(
+                                  fontSize: 14, color: Clr.black1718096),
+                            ),
+                          ],
+                        ),
+                      );
+                    }),
+              ),
+              const Spacer()
+            ],
+          ),
         )
       ],
     );

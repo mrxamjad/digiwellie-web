@@ -41,3 +41,11 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+/build/macos
+/build/506ef2e8758358d882516da6ef74a0a2
+/build/b9d67f20b67444553b0a60f583909725
+/macos/
+/linux/
+/build/ios/
+build/26c1224f28ba1925f2521c2679048535.cache.dill.track.dill
+
