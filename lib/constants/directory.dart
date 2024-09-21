@@ -47,7 +47,7 @@ class Dir {
   static const String netCore = "assets/images/NETCore.png";
   static const String mongoo = "assets/images/mon 1.png";
   static const String java = "assets/images/Java.png";
-  static const String go = "assets/images/Go.pngg";
+  static const String go = "assets/images/Go.png";
   static const String mysql =
       "assets/images/kisspng-mysqli-php-database-linux-coding-5ac4824a2e87e0 1.png";
 

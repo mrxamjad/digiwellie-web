@@ -1,4 +1,5 @@
 import 'package:dw_web/components/gradiant_box.dart';
+import 'package:dw_web/constants/colors.dart';
 import 'package:dw_web/constants/directory.dart';
 import 'package:flutter/material.dart';
 
@@ -19,24 +20,25 @@ class TechStackSection extends StatelessWidget {
       Dir.ruby
     ];
     return Container(
+      margin: const EdgeInsets.only(bottom: 100),
       child: Column(
         children: [
-          SizedBox(
+          const SizedBox(
             height: 50,
           ),
-          GradianBox(height: 5, width: 70),
-          SizedBox(
+          const GradianBox(height: 5, width: 70),
+          const SizedBox(
             height: 20,
           ),
-          Text(
+          const Text(
             "Our",
             style: TextStyle(fontSize: 35, fontWeight: FontWeight.w100),
           ),
-          Text(
+          const Text(
             "Tech Stack",
             style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
           ),
-          SizedBox(
+          const SizedBox(
             height: 60,
           ),
           SizedBox(
@@ -46,6 +48,8 @@ class TechStackSection extends StatelessWidget {
               child: Scaffold(
                 appBar: AppBar(
                   bottom: const TabBar(
+                    dividerColor: Clr.black1718096,
+                    dividerHeight: 0,
                     tabs: [
                       Tab(
                           icon: Text(
@@ -67,18 +71,19 @@ class TechStackSection extends StatelessWidget {
                   ),
                 ),
                 body: Container(
-                  height: 300,
+                  padding: const EdgeInsets.symmetric(horizontal: 200),
                   width: MediaQuery.of(context).size.width,
                   child: GridView.builder(
-                      itemCount: stackList.length,
-                      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-                          maxCrossAxisExtent: 2),
-                      itemBuilder: (context, index) {
-                        return SizedBox(
-                            width: 160,
-                            height: 80,
-                            child: Image.asset(stackList[index]));
-                      }),
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 6),
+                    itemBuilder: (_, index) => Image.asset(
+                      stackList[index],
+                    ),
+                    itemCount: stackList.length,
+                  ),
                 ),
               ),
             ),
