@@ -36,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
     DevelopmentApproachSection(),
     TechStackSection(),
     DevelopmentWorkSection(),
-    FeatureResourseSection(),
+    FeatureResourceSection(),
     GetHiredSection(),
     FooterSection(),
   ];

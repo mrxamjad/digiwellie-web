@@ -1,95 +1,183 @@
-import 'package:dw_web/components/gradiant_box.dart';
-import 'package:dw_web/constants/colors.dart';
-import 'package:dw_web/constants/directory.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
-class TechStackSection extends StatelessWidget {
-  const TechStackSection({super.key});
+class TechStackSection extends StatefulWidget {
+  const TechStackSection({Key? key}) : super(key: key);
+
+  @override
+  _TechStackSectionState createState() => _TechStackSectionState();
+}
+
+class _TechStackSectionState extends State<TechStackSection> {
+  String? hoveredCategory;
+
+  List<String> categories = [
+    "Backend",
+    "Frontend",
+    "App",
+    "Databases",
+    "CMS",
+    "CloudTesting",
+    "DevOps"
+  ];
+
+  Map<String, List<String>> techStack = {
+    // Define tech stacks for each category
+  };
+
+  Widget _buildTechLogo(String tech, double size) {
+    bool isSvg = tech.toLowerCase().endsWith('.svg');
+
+    if (isSvg) {
+      return SvgPicture.network(
+        tech,
+        width: size,
+        height: size,
+        fit: BoxFit.contain,
+        placeholderBuilder: (BuildContext context) => SizedBox(
+          width: size,
+          height: size,
+          child: Center(child: null),
+        ),
+      );
+    } else {
+      return Image.network(
+        tech,
+        width: size,
+        height: size,
+        fit: BoxFit.contain,
+        errorBuilder: (context, error, stackTrace) => SizedBox(
+          width: size,
+          height: size,
+          child: null,
+        ),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
-    List<String> stackList = [
-      Dir.go,
-      Dir.java,
-      Dir.mysql,
-      Dir.mongoo,
-      Dir.netCore,
-      Dir.nodejs,
-      Dir.php,
-      Dir.python,
-      Dir.ruby
-    ];
-    return Container(
-      margin: const EdgeInsets.only(bottom: 100),
-      child: Column(
-        children: [
-          const SizedBox(
-            height: 50,
-          ),
-          const GradianBox(height: 5, width: 70),
-          const SizedBox(
-            height: 20,
-          ),
-          const Text(
-            "Our",
-            style: TextStyle(fontSize: 35, fontWeight: FontWeight.w100),
-          ),
-          const Text(
-            "Tech Stack",
-            style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
-          ),
-          const SizedBox(
-            height: 60,
-          ),
-          SizedBox(
-            height: 400,
-            child: DefaultTabController(
-              length: 6,
-              child: Scaffold(
-                appBar: AppBar(
-                  bottom: const TabBar(
-                    dividerColor: Clr.black1718096,
-                    dividerHeight: 0,
-                    tabs: [
-                      Tab(
-                          icon: Text(
-                        "Backend",
-                        style: TextStyle(fontSize: 18),
-                      )),
-                      Tab(
-                          icon:
-                              Text("Frontend", style: TextStyle(fontSize: 18))),
-                      Tab(
-                          icon: Text("Databases",
-                              style: TextStyle(fontSize: 18))),
-                      Tab(icon: Text("CMS", style: TextStyle(fontSize: 18))),
-                      Tab(
-                          icon: Text("CloudTesting",
-                              style: TextStyle(fontSize: 18))),
-                      Tab(icon: Text("DevOps", style: TextStyle(fontSize: 18))),
-                    ],
-                  ),
-                ),
-                body: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 200),
-                  width: MediaQuery.of(context).size.width,
-                  child: GridView.builder(
-                    shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 6),
-                    itemBuilder: (_, index) => Image.asset(
-                      stackList[index],
-                    ),
-                    itemCount: stackList.length,
+    hoveredCategory ??= "Backend"; // Default category
+
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        double width = constraints.maxWidth;
+
+        // Determine layout configurations based on screen width
+        bool isMobile = width < 600;
+        bool isTablet = width >= 600 && width < 1200;
+        // bool isDesktop = width >= 1200;
+
+        double logoSize = isMobile
+            ? 60
+            : isTablet
+                ? 70
+                : 80;
+
+        return Container(
+          margin: const EdgeInsets.symmetric(vertical: 50),
+          child: Column(
+            children: [
+              // Decorative bar
+              Container(
+                width: 70,
+                height: 5,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [Colors.purple.shade200, Colors.purple.shade400],
                   ),
                 ),
               ),
-            ),
+              const SizedBox(height: 20),
+
+              // Title
+              const Text(
+                "Our",
+                style: TextStyle(fontSize: 35, fontWeight: FontWeight.w300),
+              ),
+              const Text(
+                "Tech Stack",
+                style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 40),
+
+              // Category tabs with hover effect
+              isMobile
+                  ? Column(
+                      children: categories
+                          .map((category) => GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    hoveredCategory = category;
+                                  });
+                                },
+                                child: Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 10),
+                                  child: Text(
+                                    category,
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: hoveredCategory == category
+                                          ? FontWeight.bold
+                                          : FontWeight.normal,
+                                      color: hoveredCategory == category
+                                          ? Colors.purple
+                                          : Colors.black,
+                                    ),
+                                  ),
+                                ),
+                              ))
+                          .toList(),
+                    )
+                  : Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: categories
+                          .map((category) => MouseRegion(
+                                onEnter: (_) {
+                                  setState(() {
+                                    hoveredCategory = category;
+                                  });
+                                },
+                                child: Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 15),
+                                  child: Text(
+                                    category,
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: hoveredCategory == category
+                                          ? FontWeight.bold
+                                          : FontWeight.normal,
+                                      color: hoveredCategory == category
+                                          ? Colors.purple
+                                          : Colors.black,
+                                    ),
+                                  ),
+                                ),
+                              ))
+                          .toList(),
+                    ),
+              const SizedBox(height: 40),
+
+              // Tech stack logos
+              Center(
+                child: Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: Wrap(
+                    alignment: WrapAlignment.center,
+                    spacing: isMobile ? 10 : 20,
+                    runSpacing: isMobile ? 10 : 20,
+                    children: (techStack[hoveredCategory!] ?? [])
+                        .map((tech) => _buildTechLogo(tech, logoSize))
+                        .toList(),
+                  ),
+                ),
+              ),
+            ],
           ),
-        ],
-      ),
+        );
+      },
     );
   }
 }

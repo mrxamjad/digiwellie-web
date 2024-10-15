@@ -48,6 +48,11 @@ app.*.map.json
 /build/b9d67f20b67444553b0a60f583909725
 /macos/
 /linux/
+build/8d351c32cca99165d8b49e9fbe5f4482/
 /build/ios/
+/ios/Flutter
+
+/macos
 build/26c1224f28ba1925f2521c2679048535.cache.dill.track.dill
+macos/Flutter/
 

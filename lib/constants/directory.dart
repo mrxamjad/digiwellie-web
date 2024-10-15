@@ -66,4 +66,26 @@ class Dir {
   static const String google = "assets/images/google-page-speed 1.png";
   static const String company =
       "assets/images/Web Design _ Website Design _ Software House Website _ Software Company Website (Community).zip";
+
+  //Front Tech stack
+  static const String react =
+      "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg";
+  static const String vue =
+      "https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg";
+  static const String angular =
+      "https://upload.wikimedia.org/wikipedia/commons/c/cf/Angular_full_color_logo.svg";
+  static const String svelto =
+      "https://upload.wikimedia.org/wikipedia/commons/1/1b/Svelte_Logo.svg";
+  static const String bootstarp =
+      "https://upload.wikimedia.org/wikipedia/commons/b/b2/Bootstrap_logo.svg";
+  static const String tailwind =
+      "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg";
+  static const String ember =
+      "https://upload.wikimedia.org/wikipedia/en/6/69/Ember.js_Logo_and_Mascot.png";
+  static const String next =
+      "https://upload.wikimedia.org/wikipedia/commons/8/8e/Nextjs-logo.svg";
+  static const String gatsby =
+      "https://upload.wikimedia.org/wikipedia/commons/a/a7/Gatsby_Monogram.svg";
+  static const String jquery =
+      "https://upload.wikimedia.org/wikipedia/en/9/9e/JQuery_logo.svg";
 }
